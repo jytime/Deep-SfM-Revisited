@@ -20,7 +20,7 @@ CUDA >= 10.1
 Pytorch from 1.1.0 to 1.6.0 should also work well, but it will disenable mixed precision training, and we have not tested it.
 
 
-<!-- 
+
 '''
 @article{wang2021deep,
   title={Deep Two-View Structure-from-Motion Revisited},
@@ -29,6 +29,7 @@ Pytorch from 1.1.0 to 1.6.0 should also work well, but it will disenable mixed p
   year={2021}
 }
 '''
- -->
+
+
 
 

@@ -114,19 +114,9 @@ parser.add_argument('--fix-flownet', dest='fix_flownet', action='store_true', he
 parser.add_argument('--fix-depthnet', dest='fix_depthnet', action='store_true', help='do not train depthnet')
 
 
-
 best_EPE = -1; n_iter = 0
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
-def create_logger(log_file):
-    log_format = '%(asctime)s  %(levelname)5s  %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_format, filename=log_file)
-    console = logging.StreamHandler()
-    console.setLevel(logging.INFO)
-    console.setFormatter(logging.Formatter(log_format))
-    logging.getLogger(__name__).addHandler(console)
-    return logging.getLogger(__name__)
 
 def main():
     global args, best_EPE, save_path,n_iter
@@ -713,6 +703,15 @@ def save_pose(val_loader, model, epoch, logger=None):
 
 
 ############################################## Utility ##############################################
+
+def create_logger(log_file):
+    log_format = '%(asctime)s  %(levelname)5s  %(message)s'
+    logging.basicConfig(level=logging.INFO, format=log_format, filename=log_file)
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    console.setFormatter(logging.Formatter(log_format))
+    logging.getLogger(__name__).addHandler(console)
+    return logging.getLogger(__name__)
 
 
 def convert_disps_to_depths_kitti(gt_disp, intrinsic):

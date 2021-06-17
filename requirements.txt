@@ -1,0 +1,12 @@
+DateTime==4.3
+easydict==1.9
+imageio==2.6.1
+matplotlib==3.0.3
+opencv-contrib-python==3.4.2.16
+progressbar==2.5
+pyparsing==2.3.1
+pypng==0.0.20
+PyYAML==5.1
+scikit-image==0.14.2
+tensorboardX==1.9
+tqdm==4.31.1

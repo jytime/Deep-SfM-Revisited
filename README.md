@@ -21,14 +21,14 @@ Pytorch from 1.1.0 to 1.6.0 should also work well, but it will disenable mixed p
 
 
 
-'''
+```
 @article{wang2021deep,
   title={Deep Two-View Structure-from-Motion Revisited},
   author={Wang, Jianyuan and Zhong, Yiran and Dai, Yuchao and Birchfield, Stan and Zhang, Kaihao and Smolyanskiy, Nikolai and Li, Hongdong},
   journal={CVPR},
   year={2021}
 }
-'''
+```
 
 
 

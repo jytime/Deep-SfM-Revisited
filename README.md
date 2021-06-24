@@ -36,6 +36,13 @@ python setup.py install --user
 The CUDA extension would be installed as 'essential_matrix'. Tested under Ubuntu and CUDA 10.1.
 
 
+## Acknowledgment:
+
+Thanks [Shihao Jiang](https://zacjiang.github.io/) and [Dylan Campbell](https://sites.google.com/view/djcampbell/) for sharing the implementation of the GPU-accelerated RANSAC Five-point algorithm. We really appreciate the valuable feedback from our area chairs and reviewers. We would like to thank Charles Loop for helpful discussions and Ke Chen for providing field test images from NVIDIA AV cars
+
+
+## BibTex:
+
 ```
 @article{wang2021deep,
   title={Deep Two-View Structure-from-Motion Revisited},
@@ -44,7 +51,3 @@ The CUDA extension would be installed as 'essential_matrix'. Tested under Ubuntu
   year={2021}
 }
 ```
-
-## Acknowledgment:
-
-Thanks [Shihao Jiang](https://zacjiang.github.io/) and [Dylan Campbell](https://sites.google.com/view/djcampbell/) for sharing the implementation of the GPU-accelerated RANSAC Five-point algorithm. We really appreciate the valuable feedback from our area chairs and reviewers. We would like to thank Charles Loop for helpful discussions and Ke Chen for providing field test images from NVIDIA AV cars

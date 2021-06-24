@@ -27,13 +27,13 @@ Pytorch from 1.1.0 to 1.6.0 should also work well, but it will disenable mixed p
 
 To use the RANSAC five-point algorithm, you also need to 
 
-'''
+```
 cd RANSAC_FiveP
 
 python setup.py install --user
-'''
+```
 
-The CUDA extension would be installed as 'essential_matrix'.
+The CUDA extension would be installed as 'essential_matrix'. Tested under Ubuntu and CUDA 10.1.
 
 
 ```

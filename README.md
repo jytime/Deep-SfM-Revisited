@@ -36,3 +36,6 @@ Pytorch from 1.1.0 to 1.6.0 should also work well, but it will disenable mixed p
 }
 ```
 
+## Acknowledgment:
+
+Thanks [Shihao Jiang](https://zacjiang.github.io/) and [Dylan Campbell](https://sites.google.com/view/djcampbell/) for sharing the implementation of the GPU-accelerated RANSAC Five-point algorithm. We really appreciate the valuable feedback from our area chairs and reviewers. We would like to thank Charles Loop for helpful discussions and Ke Chen for providing field test images from NVIDIA AV cars

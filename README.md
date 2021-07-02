@@ -10,7 +10,6 @@ Note: some config flags are designed for ablation study, and we have a plan to r
 
 ## Requirements
 
-
 ```
 Python >= 3.6.0
 Pytorch >= 1.6.0
@@ -39,6 +38,7 @@ The CUDA extension would be installed as 'essential_matrix'. Tested under Ubuntu
 ## Acknowledgment:
 
 Thanks [Shihao Jiang](https://zacjiang.github.io/) and [Dylan Campbell](https://sites.google.com/view/djcampbell/) for sharing the implementation of the GPU-accelerated RANSAC Five-point algorithm. We really appreciate the valuable feedback from our area chairs and reviewers. We would like to thank [Charles Loop](https://scholar.google.com/citations?user=qqSucBkAAAAJ&hl=en) for helpful discussions and Ke Chen for providing field test images from NVIDIA AV cars.
+
 
 
 ## BibTex:

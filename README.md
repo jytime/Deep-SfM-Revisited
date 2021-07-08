@@ -37,8 +37,28 @@ The CUDA extension would be installed as 'essential_matrix'. Tested under Ubuntu
 
 ## Models
 
-Pretrained models are provided [here](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing)
+Pretrained models are provided [here](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing).
 
+## KITTI Depth
+
+Please first download the KITTI dataset (RAW data) from its [official website](http://www.cvlibs.net/datasets/kitti/raw_data.php). You should also download the [split](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) files provided by us, and unzip them into the root of the KITTI dataset. Then, 
+
+```
+python main.py -b 32 --lr 0.0005 --nlabel 128 --fix_flownet \
+--data PATH/TO/YOUR/KITTI/DATASET --cfg cfgs/kitti.yml \
+--pretrained-depth depth_init.pth.tar --pretrained-flow flow_init.pth.tar
+```
+
+For evaluation, 
+```
+python main.py -v -b 1 -p 1 --nlabel 128 \
+--data PATH/TO/YOUR/KITTI/DATASET --cfg cfgs/kitti.yml \
+--pretrained kitti.pth.tar"
+```
+
+## KITTI Pose
+
+For fair comparison, we use a KITTI odometry evaluation toolbox as provided [here](https://github.com/Huangying-Zhan/kitti-odom-eval). Please generate poses by sequence, and evaluate the results correspondingly.
 
 ## Acknowledgment:
 

@@ -1,0 +1,73 @@
+﻿TAG: kitti
+
+########################################
+
+# GT_POSE: True
+
+MIXED_PREC: True
+
+ZOOM_INPUT: True
+
+TRAIN_SIZE: [256,768]
+
+MILESTONES: [3,8]
+
+RANDOM_FW_BW: True
+
+RANDOM_OFFSET: True
+
+PSNET_DEP_CONTEXT: True
+
+
+PRED_POSE_ONLINE: True
+
+RESCALE_DEPTH: True
+
+MIN_TRAIN_SCALE: 0.2
+
+MAX_TRAIN_SCALE: 2.0
+
+NORM_TARGET: 0.6
+
+FLIP_AUG: True
+
+MIN_DEPTH: 1.0
+
+KITTI_RAW_DATASET: True
+
+ransac_iter: 5
+
+
+### Eigen Split
+KITTI_697: True
+EIGEN_SFM: False
+
+### Eigen SFM Split
+# KITTI_697: False
+# EIGEN_SFM: True
+
+########################################
+
+### optical flow estimator config
+
+SHALLOW_Down: True
+
+# LOSS_TYPE: 'L2'
+MultiScale_W: [1.0,0.8,0.75,0.6,0.5,0.4,0.5,0.4,0.5,0.4]
+VALID_RANGE: [[372,372],[372,372],[360,360],[360,360],[336,336],[336,336],
+              [288,288],[288,288],[192,192],[192,192]]
+SEATCH_RANGE: [3,3,3,3,3]
+CROP_SIZE: [384,768]
+SEP_LEVEL: 5
+CTF: True
+CTF_CONTEXT: True
+SUP_RAW_FLOW: True
+
+SCALE_CONTEXT6: 0.03125
+SCALE_CONTEXT5: 0.0625
+SCALE_CONTEXT4: 0.125
+SCALE_CONTEXT3: 0.25
+SCALE_CONTEXT2: 0.5
+
+SMOOTH_COST: True
+SMOOTH_INIT_BY_ID: True

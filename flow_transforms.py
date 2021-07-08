@@ -14,6 +14,7 @@ in order to have random but coherent transformations.
 inputs are PIL Image pairs and targets are ndarrays'''
 
 
+
 class ComposeCo(object):
     def __init__(self, transforms):
         self.transforms = transforms
@@ -22,6 +23,7 @@ class ComposeCo(object):
         for t in self.transforms:
             images, targets, intrinsics = t(images, targets, intrinsics)
         return images, targets, intrinsics
+
 
 
 class NormalizeCo(object):

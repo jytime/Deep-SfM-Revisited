@@ -22,7 +22,7 @@ __C.VAL_SIZE = [370,1224]
 __C.MIN_DEPTH = 1.0
 __C.FLIP_AUG = False
 
-__C.EIGEN_FILTER =  False
+__C.EIGEN_SFM =  False
 __C.ZOOM_INPUT = False
 
 __C.SAVE_POSE = False
@@ -35,7 +35,7 @@ __C.STORED_POSE = False
 
 __C.NORM_TARGET = 0.8
 
-__C.PRED_POSE_ONLINE = False
+__C.PRED_POSE_ONLINE = True
 
 ### Deep PSNet, used as our depth estimation module
 
@@ -155,7 +155,7 @@ __C.CONTEXT_BN = False
 
 __C.FIX_DEPTH = False
 
-__C.SUP_INIT = False
+__C.SUP_INIT = True
 
 __C.IND_CONTEXT = False
 
@@ -168,7 +168,6 @@ __C.VALIDATE_FW = False
 __C.MIXED_PREC = False
 
 
-__C.TRAIN_SINGLE = False
 
 __C.NO_SMOOTH = True
 
@@ -333,7 +332,7 @@ __C.USE_VALID_RANGE = True
 __C.USE_FUSION = False
 __C.FULL_SINTEL = True
 __C.DETACH_FLOW = True
-__C.COST_COMP_METHOD = 'compute_cost_vcn'
+__C.COST_COMP_METHOD = 'compute_cost_vcn_together'
 __C.LOSS_TYPE = 'L1'
 __C.MultiScale_W = [1.,0.5,0.25]
 __C.CROP_SIZE = [256,256]

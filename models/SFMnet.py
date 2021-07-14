@@ -119,6 +119,8 @@ class SFMnet(torch.nn.Module):
                     flow_2D = flow_2D[:,:,:h_side,:w_side]
                     try:  
                         conf = conf[:,:,:h_side,:w_side]   
+                    except:
+                        conf = conf
 
                 # choose how to estimate pose, by RANSAC or deep regression
                 if cfg.POSE_EST =='RANSAC':

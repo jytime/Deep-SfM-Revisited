@@ -24,13 +24,13 @@ import imageio as io
 import logging
 from lib.config import cfg, cfg_from_file, save_config_to_file
 from demon_metrics import compute_motion_errors,l1_inverse,scale_invariant,abs_relative
-from flow_training import train_flow
 import random
 from models.SFMnet import Pose2RT
 from flow_viz import flow_to_image
 
 from KITTI_loader import KITTIVOLoaderGT,KITTIRAWLoaderGT
-from DEMON_loader import DEMON_GT_LOADER
+# from DEMON_loader import DEMON_GT_LOADER
+# from flow_training import train_flow
 
 ###################### for mixed precision training
 

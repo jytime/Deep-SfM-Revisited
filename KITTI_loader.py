@@ -305,6 +305,14 @@ class KITTIRAWLoaderGT(data.Dataset):
         self.co_transform = co_transform
         self.photo_aug = ColorJitter.get_params((0.8, 1.2), (0.8, 1.2), (0.8, 1.2), (-0.1, 0.1))
 
+        if cfg.FILTERED_PAIR and not self.train:
+            if cfg.KITTI_697:
+                self.img1_path_list = np.load(os.path.join(self.root,'val_img1_list_697.npy'),allow_pickle=True)
+            else:
+                self.img1_path_list = np.load(os.path.join(self.root,'val_img1_list_652.npy'),allow_pickle=True)
+                if cfg.EIGEN_FILTER:
+                    self.img1_path_list = np.load(os.path.join(self.root,'val_img1_list_256.npy'),allow_pickle=True)
+                    self.img1_path_list = self.img1_path_list[eigen_filter_idx]
 
 
     def __getitem__(self, index):
@@ -326,12 +334,12 @@ class KITTIRAWLoaderGT(data.Dataset):
         img2_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2))
 
         # target frame
-        # if cfg.FILTERED_PAIR and (not self.train):
-        #     img1_path = self.img1_path_list[index]
-        # else:
-        img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2+offset))
-        if not os.path.exists(img1_path):
-            img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2-offset))
+        if cfg.FILTERED_PAIR and (not self.train):
+            img1_path = self.img1_path_list[index]
+        else:
+            img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2+offset))
+            if not os.path.exists(img1_path):
+                img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2-offset))
 
 
         frame_id_1 = int(os.path.splitext(os.path.basename(img1_path))[0])

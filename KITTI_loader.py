@@ -326,12 +326,12 @@ class KITTIRAWLoaderGT(data.Dataset):
         img2_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2))
 
         # target frame
-        if cfg.FILTERED_PAIR and (not self.train):
-            img1_path = self.img1_path_list[index]
-        else:
-            img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2+offset))
-            if not os.path.exists(img1_path):
-                img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2-offset))
+        # if cfg.FILTERED_PAIR and (not self.train):
+        #     img1_path = self.img1_path_list[index]
+        # else:
+        img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2+offset))
+        if not os.path.exists(img1_path):
+            img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2-offset))
 
 
         frame_id_1 = int(os.path.splitext(os.path.basename(img1_path))[0])

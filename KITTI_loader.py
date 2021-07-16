@@ -232,7 +232,7 @@ class KITTIVOLoaderGT(data.Dataset):
             pred_pose_bw = self.pred_poses_bw[seq_1][img_id_1]
             pred_poses = [pred_pose_fw, pred_pose_bw]
         except:
-            pred_poses = None
+            pred_poses = [pose_fw*0, pose_bw*0]
 
         # write load images and intrinsics 
         imgs = [os.path.join(self.root, path) for path in inputs]
@@ -348,7 +348,7 @@ class KITTIRAWLoaderGT(data.Dataset):
             pred_poses = np.load(img2_path.replace('image_02','pred_poses_fb').replace('png','npy'))
             pred_poses = [pred_poses[0],pred_poses[1]]
         except:
-            pred_poses = None
+            pred_poses = [pose_fw*0, pose_bw*0]
 
         inputs = [img1_path,img2_path] 
         inputs = [cv2.imread(img)[:,:,::-1].astype(np.uint8) for img in inputs]

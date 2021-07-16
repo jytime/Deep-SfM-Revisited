@@ -244,6 +244,8 @@ def main():
     cudnn.benchmark = True
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=cfg.MILESTONES, gamma=0.5)
 
+
+    epoch = 0
     ### validate
     if cfg.GENERATE_DEMON_POSE_TO_SAVE:
         from generate_demon_pose import generate_DEMON_pose

@@ -432,7 +432,7 @@ def train_epoch(train_loader, model, optimizer, epoch, train_writer,scaler,logge
             train_writer.add_image(('right'+str(0)),input1,n_iter)
 
             # for visualization
-            disp_bw = [cfg.MIN_DEPTH*args.nlabel/(depth_bw_.detach().cpu())]
+            disp_bw = [cfg.MIN_DEPTH*args.nlabel/(depth_bw.detach().cpu())]
             disp_bw_gt = [cfg.MIN_DEPTH*args.nlabel/(depth_bw_gt.squeeze(1).detach().cpu())]
 
             if flow_2D_bw is not None: 

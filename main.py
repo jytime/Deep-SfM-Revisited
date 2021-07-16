@@ -339,9 +339,7 @@ def train_epoch(train_loader, model, optimizer, epoch, train_writer,scaler,logge
         # conduct training in a backward way
         # plz note backward here indicates from input1 (target frame) to input0 (reference frame)
         # rather than back-propagation
-        flow_2D_bw, pose_bw, depth_bw, depth_bw_init, rot_and_trans = model(input1, input0, intrinsics, 
-                                                                    pose_gt_bw, pred_pose_bw, cfg.GT_POSE, 
-                                                                    h_side = raw_shape[2], w_side = raw_shape[3],logger=logger)
+        flow_2D_bw, pose_bw, depth_bw, depth_bw_init, rot_and_trans = model(input1, input0, intrinsics, pose_gt_bw, pred_pose_bw, cfg.GT_POSE, h_side = raw_shape[2], w_side = raw_shape[3],logger=logger)
 
         intrinsics_invs = intrinsics.inverse().float().to(device)
         intrinsics = intrinsics.float().to(device)

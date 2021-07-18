@@ -57,6 +57,8 @@ python main.py -v -b 1 -p 1 --nlabel 128 \
 --pretrained kitti.pth.tar"
 ```
 
+The default evaluation split is Eigen. If you would like to use the Eigen SfM split, please set cfg.EIGEN_SFM = True and cfg.KITTI_697 = False.
+
 ## KITTI Pose
 
 For fair comparison, we use a KITTI odometry evaluation toolbox as provided [here](https://github.com/Huangying-Zhan/kitti-odom-eval). Please generate poses by sequence, and evaluate the results correspondingly.

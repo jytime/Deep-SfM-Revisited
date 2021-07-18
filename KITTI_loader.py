@@ -16,6 +16,7 @@ import random
 from kitti_utils import generate_depth_map
 
 
+
 def load_flow_from_png(png_path):
     # The -1 is here to specify not to change the image depth (16bit), and is compatible
     # with both OpenCV2 and OpenCV3
@@ -265,6 +266,7 @@ class KITTIVOLoaderGT(data.Dataset):
         return len(self.path_list)
 
 
+
 class KITTIRAWLoaderGT(data.Dataset):
     def __init__(self, root, transform=None, target_transform=None, co_transform=None, train=True):
 
@@ -293,6 +295,7 @@ class KITTIRAWLoaderGT(data.Dataset):
             self.path_list  = kitti_readlines(test_files)
             if cfg.EIGEN_SFM:
                 # filter 256 samples from 652
+                assert (not cfg.KITTI_697)
                 eigen_filter_mask = np.load(os.path.join(self.root, 'eigen_sfm_mask.npy'))
                 eigen_filter_idx = np.array(np.nonzero(eigen_filter_mask))[0]
                 self.path_list= np.array(self.path_list)[eigen_filter_idx]
@@ -340,6 +343,7 @@ class KITTIRAWLoaderGT(data.Dataset):
             img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2+offset))
             if not os.path.exists(img1_path):
                 img1_path = os.path.join(self.root, folder, "image_02/data", "{:010d}.png".format(frame_id_2-offset))
+
 
 
         frame_id_1 = int(os.path.splitext(os.path.basename(img1_path))[0])

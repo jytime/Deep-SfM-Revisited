@@ -12,7 +12,7 @@ Note: some config flags are designed for ablation study, and we have a plan to r
 ## Requirements
 
 ```
-Python >= 3.6.0
+Python = 3.6.0
 Pytorch >= 1.6.0
 CUDA >= 10.1
 ```

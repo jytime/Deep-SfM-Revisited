@@ -42,8 +42,9 @@ Pretrained models are provided [here](https://drive.google.com/drive/folders/1g0
 
 ## KITTI Depth
 
-Please first download the KITTI dataset (RAW data) from its [official website](http://www.cvlibs.net/datasets/kitti/raw_data.php). You should also download the [split](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) files provided by us, and unzip them into the root of the KITTI dataset. Then, 
+To reproduce our results, please first download the KITTI dataset [RAW data](http://www.cvlibs.net/datasets/kitti/raw_data.php) and 14GB [official depth maps](http://www.cvlibs.net/datasets/kitti/eval_depth.php). You should also download the [split files](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) provided by us, and unzip them into the root of the KITTI raw data. Then, modify the gt_depth_dir (KITTI_loader.py, L278) to the address of KITTI official depth maps.
 
+For training, 
 ```
 python main.py -b 32 --lr 0.0005 --nlabel 128 --fix_flownet \
 --data PATH/TO/YOUR/KITTI/DATASET --cfg cfgs/kitti.yml \

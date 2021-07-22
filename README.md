@@ -58,7 +58,9 @@ python main.py -v -b 1 -p 1 --nlabel 128 \
 --pretrained kitti.pth.tar"
 ```
 
-The default evaluation split is Eigen. If you would like to use the Eigen SfM split, please set cfg.EIGEN_SFM = True and cfg.KITTI_697 = False.
+The default evaluation split is Eigen, where the metric abs_rel should be around 0.053 and rmse should be close to 2.22.
+If you would like to use the Eigen SfM split, please set cfg.EIGEN_SFM = True and cfg.KITTI_697 = False.
+
 
 ## KITTI Pose
 

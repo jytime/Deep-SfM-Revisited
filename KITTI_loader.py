@@ -272,8 +272,8 @@ class KITTIRAWLoaderGT(data.Dataset):
 
         self.root = root
 
-        # you could project velodyne_points to depth png maps, 
-        # and save them to gt_depth_dir
+        # you could project velodyne_points to depth png maps and save them to gt_depth_dir,
+        # or use KITTI official depth maps, 
         # refer to L362 for more details 
         self.gt_depth_dir = 'YOUR/PATH/TO/KITTI/DEPTH/DATA'
 

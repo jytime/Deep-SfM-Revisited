@@ -42,7 +42,7 @@ Pretrained models are provided [here](https://drive.google.com/drive/folders/1g0
 
 ## KITTI Depth
 
-To reproduce our results, please first download the KITTI dataset [RAW data](http://www.cvlibs.net/datasets/kitti/raw_data.php) and 14GB [official depth maps](http://www.cvlibs.net/datasets/kitti/eval_depth.php). You should also download the [split files](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) provided by us, and unzip them into the root of the KITTI raw data. Then, modify the gt_depth_dir (KITTI_loader.py, L278) to the address of KITTI official depth maps.
+To reproduce our results, please first download the KITTI dataset [RAW data](http://www.cvlibs.net/datasets/kitti/raw_data.php) and 14GB [official depth maps](http://www.cvlibs.net/datasets/kitti/eval_depth.php). You should also download the [split files](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) provided by us, and unzip them into the root of the KITTI raw data. Then, modify the [gt_depth_dir](https://github.com/jytime/Deep-SfM-Revisited/blob/23d511e1bcc24651645da78912efd43fe55989b0/KITTI_loader.py#L278) to the address of KITTI official depth maps.
 
 For training, 
 ```

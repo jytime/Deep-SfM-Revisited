@@ -42,7 +42,7 @@ Pretrained models are provided [here](https://drive.google.com/drive/folders/1g0
 
 ## KITTI Depth
 
-To reproduce our results, please first download the KITTI dataset [RAW data](http://www.cvlibs.net/datasets/kitti/raw_data.php) and 14GB [official depth maps](http://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_prediction). Please first unzip the KITTI official depth maps (train and val) into a folder, and change the [gt_depth_dir](https://github.com/jytime/Deep-SfM-Revisited/blob/23d511e1bcc24651645da78912efd43fe55989b0/KITTI_loader.py#L278) to the folder name. You should also download the [split files](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) provided by us, and unzip them into the root of the KITTI raw data. 
+To reproduce our results, please first download the KITTI dataset [RAW data](http://www.cvlibs.net/datasets/kitti/raw_data.php) and 14GB [official depth maps](http://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_prediction). Please first unzip the KITTI official depth maps (train and val) into a folder, and change the flag cfg.GT_DEPTH_DIR in kitti.yml  to the folder name. You should also download the [split files](https://drive.google.com/drive/folders/1g0uoNrldySyWnkVfQ53etqcNlhzJrAHx?usp=sharing) provided by us, and unzip them into the root of the KITTI raw data. 
 
 For training, 
 ```
@@ -58,7 +58,8 @@ python main.py -v -b 1 -p 1 --nlabel 128 \
 --pretrained kitti.pth.tar"
 ```
 
-The default evaluation split is Eigen, where the metric abs_rel should be around 0.053 and rmse should be close to 2.22.
+The default evaluation split is Eigen, where the metric abs_rel should be around 0.053 and rmse should be close to 2.22 (if 'loading official ground truth depth'). 
+
 If you would like to use the Eigen SfM split, please set cfg.EIGEN_SFM = True and cfg.KITTI_697 = False.
 
 

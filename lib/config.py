@@ -17,6 +17,10 @@ __C.TAG = 'default'
 
 ### Training and validation
 
+
+__C.GT_DEPTH_DIR = None
+
+
 __C.TRAIN_SIZE = [256,512]
 __C.VAL_SIZE = [370,1224]
 __C.MIN_DEPTH = 1.0

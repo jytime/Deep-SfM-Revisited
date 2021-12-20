@@ -277,6 +277,11 @@ class KITTIRAWLoaderGT(data.Dataset):
         # refer to L362 for more details 
         self.gt_depth_dir = 'YOUR/PATH/TO/KITTI/DEPTH/DATA'
 
+        if  os.path.exists(self.gt_depth_dir):
+            print('loading official ground truth depth')
+        else:
+            print('loading depth maps from Lidar')
+
 
         self.train = train
 

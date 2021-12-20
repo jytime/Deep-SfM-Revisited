@@ -278,14 +278,6 @@ class KITTIRAWLoaderGT(data.Dataset):
 
         self.gt_depth_dir = cfg.GT_DEPTH_DIR
 
-
-        if  os.path.exists(self.gt_depth_dir):
-            print('loading official ground truth depth')
-        else:
-            print('loading depth maps from Lidar')
-
-
-
         self.train = train
 
         train_files = os.path.join(self.root, 'train_files.txt')
@@ -381,6 +373,7 @@ class KITTIRAWLoaderGT(data.Dataset):
         # gt_depth1_path = os.path.join(self.gt_depth_dir,os.path.basename(folder),'proj_depth/groundtruth/image_02','{:010d}.png'.format(frame_id_1))
         gt_depth2_path = os.path.join(self.gt_depth_dir,os.path.basename(folder),'proj_depth/groundtruth/image_02','{:010d}.png'.format(frame_id_2))
         
+
         if not os.path.exists(gt_depth2_path):
             calib_dir = os.path.join(self.root, folder.split("/")[0])
             velo_filename = os.path.join(self.root, folder,"velodyne_points/data", "{:010d}.bin".format(frame_id_2))
@@ -388,6 +381,8 @@ class KITTIRAWLoaderGT(data.Dataset):
             gt_depth2 = np.expand_dims(gt_depth2,2).astype(np.float32)
         else:
             gt_depth2 = disparity_loader_png(gt_depth2_path)
+
+
 
         # gt_depth1 is only a placeholder here; you could set any other things    
         gt_depth1 = gt_depth2.copy()

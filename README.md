@@ -2,8 +2,6 @@
 
 This repository provides the code for our CVPR 2021 paper [Deep Two-View Structure-from-Motion Revisited](https://arxiv.org/abs/2104.00556).
 
-*We have a plan to re-org the codes around May 2022. Please feel free to submit issues if you feel confused about some parts.*
-
 
 We have provided the functions for training, validating, and visualization.
 

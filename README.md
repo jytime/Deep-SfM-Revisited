@@ -6,6 +6,12 @@ This repository provides the code for our CVPR 2021 paper [Deep Two-View Structu
 We have provided the functions for training, validating, and visualization.
 
 
+
+**Updates:**
+
+- [Apr 23, 2024] Now we have a fully-batched differentiable implementation for essential matrix estimation. It is fully implemented in PyTorch and supports LORANSAC. Check [VGGSfM](https://github.com/facebookresearch/vggsfm) for details. 
+
+
 ## Requirements
 
 ```
